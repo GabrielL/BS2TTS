@@ -8,6 +8,7 @@ const http = require('http'),
 const {roszParse} = require("./bin/roszParser");
 const Roster = require("./bin/Roster");
 const ttsScript = require("./bin/ttsScript");
+const {sanitize} = require("./bin/stringUtils");
 
 
 const TEN_MINUTES = 600000,
@@ -33,14 +34,7 @@ const TEN_MINUTES = 600000,
         </p>`
             .replace(/[\n\r]/g, "\\n"),
         rosterNotFound: "Your roster code appears to have expired, please upload it again and get a new code."
-    },
-    SANITIZATION_MAPPING = {
-        " & ": " and ",
-        ">": "＞",
-        "<": "＜"
-    },
-
-    SANITIZATION_REGEX = new RegExp(Object.keys(SANITIZATION_MAPPING).join("|"), "g");
+    };
 
 const file = new statik.Server('./site'),
     currentFiles = new Set(fs.readdirSync(PATH_PREFIX).map(fileName => fileName.match(FILE_NAME_REGEX).groups.name)),
@@ -230,14 +224,6 @@ function storeFormattedXML(id, xml, height, armyData, uiHeight, uiWidth, decorat
     }));
 }
 
-/**
- * Replaces any troublesome characters with "sanitized" versions so as to not break scripting
- * @param {string} str The string to be sanitized
- * @returns {string} The sanitized string
- */
-function sanitize(str) {
-    return str.replace(SANITIZATION_REGEX, match => SANITIZATION_MAPPING[match]);
-}
 
 module.exports.server = server
 module.exports.loadModules = loadModules
