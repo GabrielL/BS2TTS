@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<roster id="b9f9-4c2d-7013-b4d8" name="New Roster" battleScribeVersion="2.03" gameSystemId="e51d-b1a3-75fc-dc33" gameSystemName="Age of Sigmar" gameSystemRevision="115" xmlns="http://www.battlescribe.net/schema/rosterSchema">
+  <forces>
+    <force id="4ca8-410b-0835-e184" name="**Pitched Battle GHB 2021** 2,000" entryId="36b7-ee1e-0855-f23f" catalogueId="3721-70d4-3f5f-4609" catalogueRevision="94" catalogueName="Order - Seraphon">
+      <rules>
+        <rule id="bdc4-1b99-239c-5a23" name="Battle Tactics" hidden="false">
+          <description>
+Broken Ranks: When you reveal this battle tactic, pick 1 Battleline unit from your opponent’s starting army on the battlefield.  You complete this battle tactic if that unit is destroyed during this turn.  If that unit was destroyed by an attack made by a friendly MONSTER or an ability of a friendly MONSTER, score 1 additional victory point.
+
+Conquer: When you reveal this battle tactic, pick 1 objective marker on the battlefield that your opponent controls.  You complete this battle tactic if you control that objective marker at the end of this turn.
+
+Slay the Warlord: You complete this battle tactic if the model chosen to be your opponent’s general is slain during this turn.  If that model was destroyed by an attack made by a friendly MONSTER or an ability of a friendly MONSTER, score 1 additional victory point.
+
+Ferocious Advance:  When you reveal this battle tactic, pick 3 different units from your starting army on the battlefield.  You complete this battle tactic if all of the units you picked run in the following movement  phase and finish that run within 3” of each other.  If all 3 of those units are MONSTERS, score 1 additional victory point.
+
+Bring It Down!: When you reveal this battle tactic, pick 1 enemy MONSTER on the battlefield.  You complete this battle tactic if that unit is destroyed during this turn.  If that enemy MONSTER was destroyed by an attack made by a friendly MONSTER or an ability of a friendly MONSTER, score 1 additional victory point.
+
+Aggressive Expansion: When you reveal this battle tactic, pick 2 objective markers on the battlefield that are not wholly within your territory.  You complete this battle tactic if you control both objective markers at the end of this turn.
+
+Monstrous Takeover: When you reveal this battle tactic, pick 1 MONSTER from your starting army on the battlefield.  You complete this battle tactic if that MONSTER is contesting an objective marker that you control at the end of this turn, and that objective marker is not contested by an enemy MONSTER.
+
+Savage Spearhead: You complete this battle tactic if there are 2 or more units from your starting army wholly within your opponent’s territory at the end of this turn.  If 2 or more of those units are MONSTERS, score 1 additional victory point.
+</description>
+        </rule>
+      </rules>
+      <selections>
+        <selection id="9270-0042-fedf-bae0" name="Allegiance" entryId="7332-f387-438b-852c::9392-2a0a-99ca-28fe" number="1" type="unit">
+          <selections>
+            <selection id="6949-0e46-2548-1aeb" name="Allegiance: Seraphon" entryId="7332-f387-438b-852c::2769-f63b-fc02-fd64" entryGroupId="7332-f387-438b-852c::dcab-3034-f776-022e" number="1" type="upgrade">
+              <profiles>
+                <profile id="7332-f387-438b-852c::5928-0e85-a9e8-db2e" name="The Great Drake" publicationId="3721-70d4-pubN65537" hidden="false" typeId="392b-293b-df9e-2f68" typeName="Secret Asterisms">
+                  <characteristics>
+                    <characteristic name="Effect" typeId="ef8e-d615-c22c-17ce">In the combat phase, pick a friendly SERAPHON HERO. Until the end of that phase, you can add 1 to the Attacks characteristic of melee weapons used by the HERO.</characteristic>
+                  </characteristics>
+                </profile>
+                <profile id="7332-f387-438b-852c::62c2-7a00-d04e-bac7" name="The Hunter&apos;s Steed" publicationId="3721-70d4-pubN65537" hidden="false" typeId="392b-293b-df9e-2f68" typeName="Secret Asterisms">
+                  <characteristics>
+                    <characteristic name="Effect" typeId="ef8e-d615-c22c-17ce">Add 1 to run and charge rolls for friendly SERAPHON units.</characteristic>
+                  </characteristics>
+                </profile>
+                <profile id="7332-f387-438b-852c::0525-d567-5b90-ec2b" name="The Sage&apos;s Staff" publicationId="169e-bacf-c9ec-0520" page="1" hidden="false" typeId="392b-293b-df9e-2f68" typeName="Secret Asterisms">
+                  <characteristics>
+                    <characteristic name="Effect" typeId="ef8e-d615-c22c-17ce">At the start of the hero phase, pick 1 friendly SERAPHON WIZARD. You can add 1 to casting and dispelling rolls for that WIZARD if it is your hero phase, and you can add 1 to unbinding rolls for the WIZARD if it is the enemy hero phase.</characteristic>
+                  </characteristics>
+                </profile>
+                <profile id="7332-f387-438b-852c::17cf-12b8-8515-2cb5" name="Secret Asterisms" publicationId="3721-70d4-pubN65537" hidden="false" typeId="c137-4d1f-9d1a-524d" typeName="Battle Trait">
+                  <characteristics>
+                    <characteristic name="Battle Trait Details" typeId="9fdd-b4b1-5f7a-0970">At the start of your hero phase, you can pick 1 of the following asterisms to be in ascendance until your next hero phase: The Great Drake, The Hunter&apos;s Steed, or The Sage&apos;s Staff.</characteristic>
+                  </characteristics>
+                </profile>
+                <profile id="7332-f387-438b-852c::0318-5d7b-f214-6726" name="Contemplation of the Ancient Ones" publicationId="3721-70d4-pubN65537" hidden="false" typeId="c137-4d1f-9d1a-524d" typeName="Battle Trait">
+                  <characteristics>
+                    <characteristic name="Battle Trait Details" typeId="9fdd-b4b1-5f7a-0970">At the end of your hero phase, you can pick 1 friendly SLANN and replace the spell they know from the Lore of Celestial Dominion table with a new spell from that table. Choose or roll for the new spell, rolling again if you generate the spell the SLANN already had.</characteristic>
+                  </characteristics>
+                </profile>
+                <profile id="7332-f387-438b-852c::7ee8-dae4-1488-caac" name="Bound Endless Spells" hidden="false" typeId="c137-4d1f-9d1a-524d" typeName="Battle Trait">
+                  <characteristics>
+                    <characteristic name="Battle Trait Details" typeId="9fdd-b4b1-5f7a-0970">Endless spells summoned by SERAPHON WIZARDS are bonded to the model that summoned them. A bonded endless spell is always controlled by the model to which it is bonded. A model cannot be bonded to more than one endless spell at the same time and cannot attempt to summon other endless spells while it is bonded. If the model that summoned the endless spell is removed from play, then the endless spell is removed from play.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <selections>
+                <selection id="67c8-faf6-2918-bb69" name="Coalesced" entryId="7332-f387-438b-852c::bf4f-9b8f-13ae-9318" entryGroupId="7332-f387-438b-852c::8249-3da9-b330-99f9" number="1" type="upgrade">
+                  <profiles>
+                    <profile id="7332-f387-438b-852c::9bc1-c2f3-1931-a028" name="Cold-blooded" publicationId="3721-70d4-pubN65537" hidden="false" typeId="c137-4d1f-9d1a-524d" typeName="Battle Trait">
+                      <characteristics>
+                        <characteristic name="Battle Trait Details" typeId="9fdd-b4b1-5f7a-0970">Ignore modifiers (positive or negative) to the bravery characteristic of COALESCED units.</characteristic>
+                      </characteristics>
+                    </profile>
+                    <profile id="7332-f387-438b-852c::0192-b575-ac84-b53d" name="Predatory Fighters" publicationId="3721-70d4-pubN65537" hidden="false" typeId="c137-4d1f-9d1a-524d" typeName="Battle Trait">
+                      <characteristics>
+                        <characteristic name="Battle Trait Details" typeId="9fdd-b4b1-5f7a-0970">Add 1 to the Attacks characteristic of jaws weapons used by COALESCED units.</characteristic>
+                      </characteristics>
+                    </profile>
+                    <profile id="7332-f387-438b-852c::9b29-2bd1-95ab-4ef0" name="Scaly Skin" publicationId="3721-70d4-pubN65537" hidden="false" typeId="c137-4d1f-9d1a-524d" typeName="Battle Trait">
+                      <characteristics>
+                        <characteristic name="Battle Trait Details" typeId="9fdd-b4b1-5f7a-0970">Subtract 1 from the damage inflicted by each successful attack that targets a COALESCED unit (to a minimum of 1).</characteristic>
+                      </characteristics>
+                    </profile>
+                    <profile id="7332-f387-438b-852c::78c0-81b4-1bc8-f20f" name="Primeval Domain" publicationId="169e-bacf-c9ec-0520" page="1" hidden="false" typeId="c137-4d1f-9d1a-524d" typeName="Battle Trait">
+                      <characteristics>
+                        <characteristic name="Battle Trait Details" typeId="9fdd-b4b1-5f7a-0970">If a terrain feature is partially or wholly within the territory of a COALESCED army, then any Damned, Arcane, Inspiring, and Mystical scenery rolls for that terrain feature only apply to COALESCED units, while any Deadly and Sinister scenery rolls for that terrain feature do not apply to COALESCED units. These scenery rules only apply if the Mysterious Terrain rules are being used.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <costs>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
+                  <categories>
+                    <category id="1653-25eb-c855-46f8" name="COALESCED" entryId="4f39-af56-dd87-529d" primary="false"/>
+                  </categories>
+                </selection>
+              </selections>
+              <costs>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
+            </selection>
+          </selections>
+          <costs>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+          <categories>
+            <category id="add1-8c9a-26d6-592c" name="Allegiance" entryId="87e8-c095-f059-5f7b" primary="true"/>
+          </categories>
+        </selection>
+        <selection id="e2e9-cc0f-f6e4-d2d0" name="Grand Strategy" entryId="ea0a-d09c-c227-3b95::f4d5-5487-ceb3-d0cc" number="1" type="upgrade">
+          <costs>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+          <categories>
+            <category id="0107-007e-d3ee-a933" name="Game Options" entryId="1974-3f49-7f0b-8422" primary="true"/>
+          </categories>
+        </selection>
+        <selection id="55bd-e536-241e-6026" name="Game Type" entryId="e12e-ffc5-6892-4795::a741-5681-7572-fa32" number="1" type="upgrade">
+          <selections>
+            <selection id="2770-b612-c378-cdcc" name="2000 Points - Battlehost" entryId="e12e-ffc5-6892-4795::39f6-88b3-177e-2535::cea8-e4b2-c44f-c7b4" entryGroupId="e12e-ffc5-6892-4795::39f6-88b3-177e-2535::5927-9c5a-8b20-8f37" number="1" type="upgrade">
+              <costs>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
+              <categories>
+                <category id="00df-5fd6-b815-6d69" name="Battlehost" entryId="6330-7561-7a32-0851" primary="false"/>
+              </categories>
+            </selection>
+          </selections>
+          <costs>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+          <categories>
+            <category id="bd99-a117-0f65-29e0" name="Game Options" entryId="1974-3f49-7f0b-8422" primary="true"/>
+          </categories>
+        </selection>
+      </selections>
+      <publications>
+        <publication id="e51d-b1a3-pubEC" name="The General&apos;s Handbook"/>
+        <publication id="e51d-b1a3-pubEHOGM" name="Malign Sorcery"/>
+        <publication id="7ca7-0a01-0c6c-9b61" name="Broken Realms: Kragnos"/>
+        <publication id="0b83-94a3-b3da-fb4e" name="Warhammer Legends: GA Chaos"/>
+        <publication id="dd94-71a7-8549-0d65" name="Warhammer Legends: Monstrous Arcanum"/>
+        <publication id="169e-bacf-c9ec-0520" name="Battletome: Seraphon Errata, July 2021"/>
+        <publication id="ff85-f62a-3b88-2684" name="Cursed City Warscrolls"/>
+        <publication id="593b-5e83-0f16-c340" name="Monstrous Arcanum - July 2021"/>
+        <publication id="744e-47b4-269f-a64f" name="Warhammer Legends: GA Order"/>
+        <publication id="e51d-b1a3-pubE5LCI" name="General&apos;s Handbook 2018"/>
+        <publication id="2cc2-ea66-5ff1-2f18" name="Sons of Behemat"/>
+        <publication id="bbd8-4b0e-5ec1-b7fc" name="Warhammer Legends: GA Destruction"/>
+        <publication id="1b21-9526-2c4d-4176" name="Broken Realms: Morathi"/>
+        <publication id="9ba2-cdb6-f9ce-98d0" name="Broken Realms: Be&apos;lakor"/>
+        <publication id="61a7-398e-1772-000d" name="White Dwarf 467"/>
+        <publication id="e51d-b1a3-pubEQOCI" name="General&apos;s Handbook 2017"/>
+        <publication id="c611-9443-93f3-10e5" name="Broken Realms: Teclis"/>
+        <publication id="e51d-b1a3-pubEFCFK" name="Malign Sorcery; Errata, July 2018"/>
+        <publication id="3721-70d4-pubN65537" name="Order Battletome - Seraphon"/>
+        <publication id="e51d-b1a3-pubEKHGM" name="Malign Sorcery"/>
+        <publication id="ed1f-dca6-6c38-b4d5" name="Warhammer Legends: GA Death"/>
+        <publication id="e51d-b1a3-pubETJDK" name="Malign Sorcery; Official Errata, December 2018"/>
+        <publication id="e434-aae2-8d86-e264" name="General&apos;s Handbook 2021"/>
+        <publication id="e51d-b1a3-pubEQ" name="Core Rules"/>
+      </publications>
+      <categories>
+        <category id="ce01-39d7-fc6a-999c" name="Uncategorised" entryId="(No Category)" primary="false"/>
+        <category id="8985-8079-58df-d43a" name="Core Battalion" entryId="6575-7d6c-ce4d-ada4" primary="false"/>
+        <category id="1b66-f795-7f09-9808" name="Leader" entryId="6c6b-e787-f9b8-a510" primary="false"/>
+        <category id="86e5-3ef3-7676-c503" name="Behemoth" entryId="fa0c-9044-2568-fa02" primary="false"/>
+        <category id="1e76-6546-abfc-7bd8" name="Battleline" entryId="e9f2-765a-b7b8-ce8e" primary="false"/>
+        <category id="79d4-85d2-8543-fa14" name="Other" entryId="065e-fda7-fd27-1f40" primary="false"/>
+        <category id="8dec-de67-3428-c3a4" name="Artillery" entryId="1d26-07fc-6a66-d73e" primary="false"/>
+        <category id="b9e8-75cd-8d0b-1628" name="Scenery" entryId="bc8a-9257-1601-6d62" primary="false"/>
+        <category id="b297-1a76-30ac-0295" name="General" entryId="b745-17c4-8fbf-8b04" primary="false"/>
+        <category id="1be4-60c7-23d8-763e" name="Artefact" entryId="3564-4c26-10b4-d953" primary="false"/>
+        <category id="f33a-f1ea-2238-b9aa" name="Allegiance" entryId="87e8-c095-f059-5f7b" primary="false"/>
+        <category id="bbec-ee39-5707-4207" name="Game Options" entryId="1974-3f49-7f0b-8422" primary="false"/>
+        <category id="6bc7-0302-4406-2d82" name="Realm of Origin" entryId="5c6d-5384-bcb1-b474" primary="false"/>
+        <category id="1926-a0eb-2546-f418" name="Malign Sorcery" entryId="eecb-ed66-d474-9ddd" primary="false"/>
+        <category id="4fe1-2909-0d66-1134" name="Command Points" entryId="8be8-3ccd-be93-b55e" primary="false"/>
+        <category id="174e-f8d5-da19-076f" name="Realm of Battle" entryId="5e28-c4f1-4a92-b75c" primary="false"/>
+        <category id="2bd7-aaea-6214-badf" name="Reinforced" entryId="1109-7ce6-b7a3-3a0c" primary="false"/>
+        <category id="c205-421a-54c8-d828" name="Legends" entryId="787f-7260-bb51-08c8" primary="false"/>
+      </categories>
+    </force>
+  </forces>
+</roster>

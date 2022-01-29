@@ -1,9 +1,10 @@
 const path = require("path");
-const {roszParse} = require("../bin/roszParser");
+const {roszParse, UnknownGame, getGameSystemName} = require("../bin/roszParser");
 const approvals = require("approvals");
 const crypto = require("crypto");
 const fs = require("fs");
 const roszParser = require("../bin/Roster");
+const {parseXML} = require("../bin/xml");
 
 function getTestNameSafe() {
     return expect.getState().currentTestName
@@ -128,4 +129,16 @@ test("uncompressed roster", () => {
     const roster = roszParse(fileContent);
     expect(roster.units).toBeDefined()
     expect(roster.order).toBeDefined()
+})
+
+test("do not load non warhammer 40k rosters", () => {
+    const fileContent = fs.readFileSync(path.join(__dirname, "../samples", "aos.ros"));
+    expect(() => roszParse(fileContent)).toThrow(UnknownGame)
+})
+
+test("retrieve gameSystemName", () => {
+    const fileContent = fs.readFileSync(path.join(__dirname, "../samples", "sample-army.ros"));
+    const result = parseXML(fileContent);
+
+    expect(getGameSystemName(result)).toBe("Warhammer 40,000 9th Edition" )
 })
