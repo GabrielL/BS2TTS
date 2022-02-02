@@ -1,0 +1,376 @@
+{
+    "units": {
+        "00000000": {
+            "name": "Immortals",
+            "factionKeywords": [
+                "<Dynasty>",
+                "Necrons"
+            ],
+            "keywords": [
+                "Immortals",
+                "Infantry",
+                "Core"
+            ],
+            "abilities": {},
+            "models": {
+                "models": {
+                    "0404040404040404": {
+                        "name": "Immortal",
+                        "abilities": [
+                            "Reanimation Protocols",
+                            "Objective Secured",
+                            "Command Protocols"
+                        ],
+                        "weapons": [
+                            {
+                                "name": "Gauss Blaster",
+                                "number": 1
+                            }
+                        ],
+                        "number": 9
+                    }
+                },
+                "totalNumberOfModels": 9
+            },
+            "modelProfiles": {
+                "Immortal": {
+                    "name": "Immortal",
+                    "m": "5\"",
+                    "ws": "3+",
+                    "bs": "3+",
+                    "s": "4",
+                    "t": "5",
+                    "w": "1",
+                    "a": "2",
+                    "ld": "10",
+                    "sv": "3+"
+                }
+            },
+            "weapons": {
+                "Gauss Blaster": {
+                    "name": "Gauss Blaster",
+                    "range": "30\"",
+                    "type": "Rapid Fire 1",
+                    "s": "5",
+                    "ap": "-2",
+                    "d": "1",
+                    "abilities": "-"
+                }
+            },
+            "rules": [
+                "Reanimation Protocols",
+                "Objective Secured",
+                "Command Protocols"
+            ],
+            "uuid": "00000000",
+            "unassignedWeapons": [],
+            "pl": 8,
+            "isSingleModel": false
+        },
+        "01010101": {
+            "name": "Orikan the Diviner",
+            "factionKeywords": [
+                "Necrons"
+            ],
+            "keywords": [
+                "Character",
+                "Infantry",
+                "Orikan the Diviner",
+                "Dynastic Agent",
+                "Chronomancer",
+                "Cryptek"
+            ],
+            "abilities": {
+                "Master Chronomancer": {
+                    "name": "Master Chronomancer",
+                    "desc": "In your Command phase, you can select one friendly NECRONS unit within 9\\\" of this model. Until the start of your next Command phase, you can re-roll charge rolls made for that unit and models in that unit have a 5+ invulnerable save."
+                },
+                "Prescient Strike": {
+                    "name": "Prescient Strike",
+                    "desc": "At the start of the Fight phase, if this model is within Engagement Range of any enemy units, it can fight first that phase."
+                },
+                "Timesplinter Mantle": {
+                    "name": "Timesplinter Mantle",
+                    "desc": "This model has a 4+ invulnerable save."
+                },
+                "The Stars Are Right": {
+                    "name": "The Stars Are Right",
+                    "desc": "In your Command phase, if this model is on the battlefield, roll one D6; if the result is less than the current battle round number, then until the end of the battle, use the Orikan Empowered profile for this model (note that any wounds it has already lost remain lost)."
+                },
+                "Immortal Pride": {
+                    "name": "Immortal Pride",
+                    "desc": "Each time this WARLORD would lose a wound as a result of a mortal wound, roll one D6; on a 5+, that wound is not lost.  This WARLORD has the following ability: \\\"Immortal Pride (Aura).\\\""
+                },
+                "Immortal Pride (Aura)": {
+                    "name": "Immortal Pride (Aura)",
+                    "desc": "While a friendly <DYNASTY> CORE unit is within 6\\\" of this model, each time a Combat Attrition test is taken for that unit, ignore any or all modifiers."
+                }
+            },
+            "models": {
+                "models": {
+                    "0505050505050505": {
+                        "name": "Orikan the Diviner",
+                        "abilities": [
+                            "Master Chronomancer",
+                            "Prescient Strike",
+                            "Timesplinter Mantle",
+                            "The Stars Are Right",
+                            "Immortal Pride",
+                            "Immortal Pride (Aura)",
+                            "Command Protocols",
+                            "Living Metal"
+                        ],
+                        "weapons": [
+                            {
+                                "name": "Staff of Tomorrow",
+                                "number": 1
+                            }
+                        ],
+                        "number": 1
+                    }
+                },
+                "totalNumberOfModels": 1
+            },
+            "modelProfiles": {
+                "Orikan the Diviner": {
+                    "name": "Orikan the Diviner",
+                    "m": "5\"",
+                    "ws": "3+",
+                    "bs": "3+",
+                    "s": "4",
+                    "t": "4",
+                    "w": "5",
+                    "a": "2",
+                    "ld": "10",
+                    "sv": "4+"
+                }
+            },
+            "weapons": {
+                "Staff of Tomorrow": {
+                    "name": "Staff of Tomorrow",
+                    "range": "Melee",
+                    "type": "Melee",
+                    "s": "User",
+                    "ap": "-3",
+                    "d": "D3",
+                    "abilities": "Each time an attack is made with this weapon, invulnerable saving throws cannot be taken against that attack."
+                }
+            },
+            "rules": [
+                "Command Protocols",
+                "Living Metal"
+            ],
+            "uuid": "01010101",
+            "unassignedWeapons": [],
+            "pl": 6,
+            "isSingleModel": true
+        },
+        "02020202": {
+            "name": "C'tan Shard of the Nightbringer",
+            "factionKeywords": [
+                "Necrons"
+            ],
+            "keywords": [
+                "C'tan Shard",
+                "Character",
+                "Fly",
+                "Monster",
+                "C'tan Shard of the Nightbringer"
+            ],
+            "abilities": {
+                "Powers of the C'tan (Nightbringer)": {
+                    "name": "Powers of the C'tan (Nightbringer)",
+                    "desc": "This model knows the Gaze of Death C'tan Power and one other C'tan Power from the Powers of the C'tan. At the end of your Movement phase, if this model did not Advance or Fall Back that phase, it can use two of the C'tan Powers it knows. It cannot use the same C'tan Power more than once per turn."
+                },
+                "Drain Life": {
+                    "name": "Drain Life",
+                    "desc": "Each time this model makes a melee attack that is allocated to an enemy model, that enemy model cannot use any rules to ignore the wounds it loses."
+                },
+                "Necrodermis": {
+                    "name": "Necrodermis",
+                    "desc": "This model has a 4+ invulnerable save. In addition, this model cannot lose more than 3 wounds in the same phase. Any wounds that would be lost after that point are not lost."
+                },
+                "Explodes (4+|6\"|D3)": {
+                    "name": "Explodes (4+|6\\\"|D3)",
+                    "desc": "When this model is destroyed, roll one D6 before removing it from play. On a 4+ it explodes, and each unit within 6\\\" suffers D3 mortal wounds."
+                },
+                "Enslaved Star God": {
+                    "name": "Enslaved Star God",
+                    "desc": "This model can never have a Relic or a Warlord Trait. In addition, enemy models can ignore the Look Out, Sir rule when selecting this model as the target of a ranged attack."
+                },
+                "Gaze of Death": {
+                    "name": "Gaze of Death",
+                    "desc": "Select one enemy unit within 9\\\" of and visible to this C'TAN SHARD. Roll three D6s; for each 4+, that unit suffers D3 mortal wounds."
+                },
+                "Sky of Falling Stars": {
+                    "name": "Sky of Falling Stars",
+                    "desc": "Select up to three enemy units within 24\\\" of this C'TAN SHARD. For each of those units, roll one D6; on a 1-5, if the dice result is less than the number of models in that unit, that unit suffers D3 mortal wounds.  If this C'TAN SHARD is a TESSERACT VAULT, that unit suffers 3 mortal wounds from this power instead of D3."
+                }
+            },
+            "models": {
+                "models": {
+                    "0606060606060606": {
+                        "name": "C'tan Shard of the Nightbringer",
+                        "abilities": [
+                            "Powers of the C'tan (Nightbringer)",
+                            "Drain Life",
+                            "Necrodermis",
+                            "Explodes (4+|6\"|D3)",
+                            "Enslaved Star God",
+                            "Gaze of Death",
+                            "Sky of Falling Stars",
+                            "Living Metal",
+                            "Powers of the C'tan (Instructions)"
+                        ],
+                        "weapons": [
+                            {
+                                "name": "Scythe of the Nightbringer (Reaping Sweep)",
+                                "number": 1
+                            },
+                            {
+                                "name": "Scythe of the Nightbringer (Entropic Blow)",
+                                "number": 1
+                            }
+                        ],
+                        "number": 1
+                    }
+                },
+                "totalNumberOfModels": 1
+            },
+            "modelProfiles": {
+                "C'tan Shard of the Nightbringer": {
+                    "name": "C'tan Shard of the Nightbringer",
+                    "m": "8\"",
+                    "ws": "2+",
+                    "bs": "2+",
+                    "s": "7",
+                    "t": "7",
+                    "w": "9",
+                    "a": "6",
+                    "ld": "10",
+                    "sv": "4+"
+                }
+            },
+            "weapons": {
+                "Scythe of the Nightbringer (Reaping Sweep)": {
+                    "name": "Scythe of the Nightbringer (Reaping Sweep)",
+                    "range": "Melee",
+                    "type": "Melee",
+                    "s": "User",
+                    "ap": "-3",
+                    "d": "1",
+                    "abilities": "Each time an attack is made with this weapon profile, make 2 hit rolls instead of 1."
+                },
+                "Scythe of the Nightbringer (Entropic Blow)": {
+                    "name": "Scythe of the Nightbringer (Entropic Blow)",
+                    "range": "Melee",
+                    "type": "Melee",
+                    "s": "x2",
+                    "ap": "-4",
+                    "d": "D6",
+                    "abilities": "Each time an attack is made with this weapon profile, invulnerable saving throws cannot be made against that attack."
+                }
+            },
+            "rules": [
+                "Living Metal",
+                "Powers of the C'tan (Instructions)"
+            ],
+            "uuid": "02020202",
+            "unassignedWeapons": [],
+            "pl": 19,
+            "isSingleModel": true
+        },
+        "03030303": {
+            "name": "Canoptek Tombstalker",
+            "factionKeywords": [
+                "<Dynasty>",
+                "Canoptek",
+                "Necrons"
+            ],
+            "keywords": [
+                "Monster",
+                "Canoptek Tomb Stalker"
+            ],
+            "abilities": {
+                "Gloom Prism": {
+                    "name": "Gloom Prism",
+                    "desc": "In your opponent's Psychic phase, the bearer's unit can attempt to deny one psychic power as if it were a PSYKER."
+                }
+            },
+            "models": {
+                "models": {
+                    "0707070707070707": {
+                        "name": "Canoptek Tombstalker",
+                        "abilities": [
+                            "Gloom Prism",
+                            "Living Metal",
+                            "Dimensional Translocation",
+                            "Command Protocols"
+                        ],
+                        "weapons": [
+                            {
+                                "name": "Tomb Stalker Claws",
+                                "number": 1
+                            },
+                            {
+                                "name": "Gauss Slicer",
+                                "number": 1
+                            }
+                        ],
+                        "number": 1
+                    }
+                },
+                "totalNumberOfModels": 1
+            },
+            "modelProfiles": {
+                "Canoptek Tombstalker": {
+                    "name": "Canoptek Tombstalker",
+                    "m": "10\"",
+                    "ws": "4+",
+                    "bs": "4+",
+                    "s": "6",
+                    "t": "7",
+                    "w": "9",
+                    "a": "6",
+                    "ld": "10",
+                    "sv": "3+"
+                }
+            },
+            "weapons": {
+                "Tomb Stalker Claws": {
+                    "name": "Tomb Stalker Claws",
+                    "range": "Melee",
+                    "type": "Melee",
+                    "s": "+1",
+                    "ap": "-2",
+                    "d": "2",
+                    "abilities": "-"
+                },
+                "Gauss Slicer": {
+                    "name": "Gauss Slicer",
+                    "range": "24\"",
+                    "type": "Rapid Fire 2",
+                    "s": "5",
+                    "ap": "-1",
+                    "d": "1",
+                    "abilities": "-"
+                }
+            },
+            "rules": [
+                "Living Metal",
+                "Dimensional Translocation",
+                "Command Protocols"
+            ],
+            "uuid": "03030303",
+            "unassignedWeapons": [],
+            "pl": 5,
+            "isSingleModel": true
+        }
+    },
+    "order": [
+        "00000000",
+        "01010101",
+        "02020202",
+        "03030303"
+    ]
+}

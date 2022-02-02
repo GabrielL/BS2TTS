@@ -25,6 +25,7 @@ const approvalSamples = [
     "sample-sm-bike-squad.rosz",
     "sample-sm-librarian-dreadnought.rosz",
     "sample-grey-knights-land-raider.rosz",
+    "750-necron.rosz",
 ]
 
 describe("roster loading = approvals", () => {
