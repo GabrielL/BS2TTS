@@ -1,23 +1,4 @@
 {
-    "WoundChanging": {
-        "Constants": "WoundChanging_Constants.lua",
-        "Module": "WoundChanging.lua",
-        "Postreq": "Utility.lua",
-        "ScriptKeys": {
-            "2": "function (playerColor, target) changeModelWoundCount(-1, target) end",
-            "3": "function (playerColor, target) changeModelWoundCount(1, target) end"
-        }
-    },
-    
-    "DataCard": {
-        "Constants": "DataCard_Constants.lua",
-        "Module": "DataCard.lua",
-        "Postreq": "Utility.lua",
-        "ScriptKeys": {
-            "1": "function (playerColor) showCard('dataCard', playerColor) end"
-        }
-    },
-
     "MatchedPlay": {
         "Constants": "MatchedPlay_Constants.lua",
         "Module": "MatchedPlay.lua",
