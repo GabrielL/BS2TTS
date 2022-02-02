@@ -64,6 +64,10 @@ module.exports = class Model {
         }
     }
 
+    setWeapons(weaponArray) {
+        this.weapons = weaponArray;
+    }
+
     add(model) {
         this.number += model.number;
         this.abilities = arrayUtils.union(this.abilities, model.abilities);
