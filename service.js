@@ -36,6 +36,19 @@ const TEN_MINUTES = 600000,
         rosterNotFound: "Your roster code appears to have expired, please upload it again and get a new code."
     };
 
+function formatArmy(armyData, uiHeight, uiWidth, decorativeNames, modules) {
+    return {
+        xml: undefined,
+        order: armyData.order,
+        height: undefined,
+        armyData: JSON.parse(sanitize(JSON.stringify(armyData.units))), // yes, I know this looks awful
+        uiHeight: uiHeight,
+        uiWidth: uiWidth,
+        decorativeNames: decorativeNames,
+        baseScript: buildScript(modules)
+    };
+}
+
 const file = new statik.Server('./site'),
     currentFiles = new Set(fs.readdirSync(PATH_PREFIX).map(fileName => fileName.match(FILE_NAME_REGEX).groups.name)),
     server = http.createServer(function (req, res) {
@@ -112,13 +125,13 @@ const file = new statik.Server('./site'),
 
                         sendHTTPResponse(res, `{ "code": "${uuid}" }`, 200);
 
-                        formatAndStoreXML(uuid,
-                            armyData.order,
-                            armyData.units,
-                            postURL.searchParams.get('uiHeight'),
-                            postURL.searchParams.get('uiWidth'),
-                            postURL.searchParams.get('decorativeNames'),
-                            buildScript(postURL.searchParams.get("modules").split(",")));
+                        const uiHeight = postURL.searchParams.get('uiHeight');
+                        const uiWidth = postURL.searchParams.get('uiWidth');
+                        const decorativeNames = postURL.searchParams.get('decorativeNames');
+                        const modules = postURL.searchParams.get("modules").split(",");
+
+                        const outputData = formatArmy(armyData, uiHeight, uiWidth, decorativeNames, modules);
+                        fs.writeFileSync(`${PATH_PREFIX}${uuid}.json`, JSON.stringify(outputData));
                     } catch (err) {
                         sendHTTPResponse(res, `{ "err": "${ERRORS.unknown}" }`, 500);
                         console.log(err);
@@ -207,24 +220,7 @@ function buildScript(modules) {
     return scriptBuilder.build(modules);
 }
 
-function formatAndStoreXML(id, order, armyData, uiHeight, uiWidth, decorativeNames, baseScript) {
-    storeFormattedXML(id, undefined, undefined, armyData, uiHeight, uiWidth, decorativeNames, baseScript, order);
-}
-
-function storeFormattedXML(id, xml, height, armyData, uiHeight, uiWidth, decorativeNames, baseScript, order) {
-    fs.writeFileSync(`${PATH_PREFIX}${id}.json`, JSON.stringify({
-        xml,
-        order,
-        height,
-        armyData: JSON.parse(sanitize(JSON.stringify(armyData))), // yes, I know this looks awful
-        uiHeight,
-        uiWidth,
-        decorativeNames,
-        baseScript
-    }));
-}
-
-
+module.exports.formatArmy = formatArmy
 module.exports.server = server
 module.exports.loadModules = loadModules
 module.exports.cleanFiles = cleanFiles

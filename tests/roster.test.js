@@ -1,10 +1,15 @@
 const path = require("path");
-const {roszParse, UnknownGame, getGameSystemName} = require("../bin/roszParser");
-const approvals = require("approvals");
 const crypto = require("crypto");
 const fs = require("fs");
-const roszParser = require("../bin/Roster");
+
+const approvals = require("approvals");
+
+const {roszParse, UnknownGame, getGameSystemName} = require("../bin/roszParser");
+const Roster = require("../bin/Roster");
 const {parseXML} = require("../bin/xml");
+const Output = require("../bin/Output");
+const {formatArmy, loadModules} = require("../service");
+
 
 function getTestNameSafe() {
     return expect.getState().currentTestName
@@ -12,109 +17,51 @@ function getTestNameSafe() {
         .replaceAll("/", "-");
 }
 
-test("parse roster", () => {
-    var id = 0
-    const spy = jest.spyOn(crypto, "randomBytes").mockImplementation((size) => {
-        return Buffer.alloc(size, id++);
-    });
+const approvalSamples = [
+    "sample-army.rosz",
+    "adepta-sororitas-celestine.rosz",
+    "tau-commander.rosz",
+    "sample-sm-vanguard-vets.rosz",
+    "sample-sm-bike-squad.rosz",
+    "sample-sm-librarian-dreadnought.rosz",
+    "sample-grey-knights-land-raider.rosz",
+]
 
-    const fileContent = fs.readFileSync(path.join(__dirname, "../samples", "sample-army.rosz"));
+describe("roster loading = approvals", () => {
+   it.each(approvalSamples)("%s", (filename) => {
+       var id = 0
+       const spy = jest.spyOn(crypto, "randomBytes").mockImplementation((size) => {
+           return Buffer.alloc(size, id++);
+       });
 
-    const roster = roszParse(fileContent);
-
-    approvals.verify(__dirname, getTestNameSafe(), roszParser.serialize(roster, 4))
-
-    spy.mockRestore();
+       const fileContent = fs.readFileSync(path.join(__dirname, "../samples", filename));
+       const roster = roszParse(fileContent);
+       approvals.verify(__dirname, getTestNameSafe(), Roster.serialize(roster, 4))
+       spy.mockRestore();
+   })
 });
 
-test("celestine", () => {
-    var id = 0
-    const spy = jest.spyOn(crypto, "randomBytes").mockImplementation((size) => {
-        return Buffer.alloc(size, id++);
-    });
+describe("roster validation", () => {
+   it.each(approvalSamples)("%s", (filename) => {
+       const fileContent = fs.readFileSync(path.join(__dirname, "../samples", filename));
+       const result = roszParse(fileContent);
 
-    const fileContent = fs.readFileSync(path.join(__dirname, "../samples", "adepta-sororitas-celestine.rosz"));
+       loadModules()
 
-    const roster = roszParse(fileContent);
+       const params = {
+           uiHeight: 100,
+           uiWidth: 100,
+           decorativeNames: true,
+           modules: ["MatchedPlay", "Crusade"]
+       }
 
-    approvals.verify(__dirname, getTestNameSafe(), roszParser.serialize(roster, 4))
+       const data = JSON.parse(Roster.serialize(result))
 
-    spy.mockRestore();
-})
+       const armyData = formatArmy(data, params.uiHeight, params.uiWidth, params.decorativeNames, params.modules)
 
-test("tau commander", () => {
-    var id = 0
-    const spy = jest.spyOn(crypto, "randomBytes").mockImplementation((size) => {
-        return Buffer.alloc(size, id++);
-    });
-
-    const fileContent = fs.readFileSync(path.join(__dirname, "../samples", "tau-commander.rosz"));
-
-    const roster = roszParse(fileContent);
-
-    approvals.verify(__dirname, getTestNameSafe(), roszParser.serialize(roster, 4))
-
-    spy.mockRestore();
-});
-
-test("vanguards", () => {
-    var id = 0
-    const spy = jest.spyOn(crypto, "randomBytes").mockImplementation((size) => {
-        return Buffer.alloc(size, id++);
-    });
-
-    const fileContent = fs.readFileSync(path.join(__dirname, "../samples", "sample-sm-vanguard-vets.rosz"));
-
-    const roster = roszParse(fileContent);
-
-    approvals.verify(__dirname, getTestNameSafe(), roszParser.serialize(roster, 4))
-
-    spy.mockRestore();
-});
-
-test("sm bike squad", () => {
-    var id = 0
-    const spy = jest.spyOn(crypto, "randomBytes").mockImplementation((size) => {
-        return Buffer.alloc(size, id++);
-    });
-
-    const fileContent = fs.readFileSync(path.join(__dirname, "../samples", "sample-sm-bike-squad.rosz"));
-
-    const roster = roszParse(fileContent);
-
-    approvals.verify(__dirname, getTestNameSafe(), roszParser.serialize(roster, 4))
-
-    spy.mockRestore();
-});
-
-test("blood angel librarian dreadnought", () => {
-    var id = 0
-    const spy = jest.spyOn(crypto, "randomBytes").mockImplementation((size) => {
-        return Buffer.alloc(size, id++);
-    });
-
-    const fileContent = fs.readFileSync(path.join(__dirname, "../samples", "sample-sm-librarian-dreadnought.rosz"));
-
-    const roster = roszParse(fileContent);
-
-    approvals.verify(__dirname, getTestNameSafe(), roszParser.serialize(roster, 4))
-
-    spy.mockRestore();
-});
-
-test("grey knight land raider", () => {
-    var id = 0
-    const spy = jest.spyOn(crypto, "randomBytes").mockImplementation((size) => {
-        return Buffer.alloc(size, id++);
-    });
-
-    const fileContent = fs.readFileSync(path.join(__dirname, "../samples", "sample-grey-knights-land-raider.rosz"));
-
-    const roster = roszParse(fileContent);
-
-    approvals.verify(__dirname, getTestNameSafe(), roszParser.serialize(roster, 4))
-
-    spy.mockRestore();
+       const {value, error} = Output.validate(armyData)
+       expect(error).toBeUndefined()
+   });
 });
 
 test("empty roster", () => {
