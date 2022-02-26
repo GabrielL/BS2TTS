@@ -1,5 +1,21 @@
 const Unit = require("./Unit");
 
+function parseForce(force, units) {
+    if (force.selections === undefined || force.selections.length !== 1) {
+        return;
+    }
+
+    let armyUnitData = force.selections[0].selection.filter(hasUnitSomewhereRecursive);
+
+    for (let unitData of armyUnitData) {
+        let unit = new Unit(unitData.$.name, unitData.$.customName, unitData.$.type === "model");
+
+        unit.handleSelectionDataRecursive(unitData, null, true);
+
+        units.set(unit.uuid, unit.update());
+    }
+}
+
 /**
  * Parses the given .ros data into the format we want for TTS
  * @param {any} data The roster data (parsed from XML) to be parsed
@@ -9,19 +25,15 @@ module.exports.parse = (data) => {
     let units = new Map();
 
     for (const force of data[0].force) {
-        if (force.selections === undefined || force.selections.length !== 1) {
-            break;
+
+        // handle nested forces
+        if (force.forces !== undefined) {
+            for (const f of force.forces[0].force) {
+                parseForce(f, units);
+            }
         }
 
-        let armyUnitData = force.selections[0].selection.filter(hasUnitSomewhereRecursive);
-
-        for (let unitData of armyUnitData) {
-            let unit = new Unit(unitData.$.name, unitData.$.customName, unitData.$.type === "model");
-
-            unit.handleSelectionDataRecursive(unitData, null, true);
-
-            units.set(unit.uuid, unit.update());
-        }
+        parseForce(force, units);
     }
 
     let order = [];

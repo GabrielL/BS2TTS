@@ -90,3 +90,9 @@ test("retrieve gameSystemName", () => {
 
     expect(getGameSystemName(result)).toBe("Warhammer 40,000 9th Edition" )
 })
+
+test("nested detachements", () => {
+    const fileContent = fs.readFileSync(path.join(__dirname, "../samples", "nested-detachements.rosz"));
+    const roster = roszParse(fileContent);
+    expect(roster.units.size).toBe(2);
+})
